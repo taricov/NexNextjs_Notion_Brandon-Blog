@@ -76,9 +76,8 @@ const NavBar = () => {
             link.show && (
               <Link passHref href={link.to} key={link.id} scroll={false}>
                 <li
-                  className={`${
-                    activeMenu === link.to ? 'bg-gray-200 dark:bg-gray-700' : ''
-                  } hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-lg block py-1 px-2 nav`}
+                  className={`${activeMenu === link.to ? 'bg-gray-200 dark:bg-gray-700' : ''
+                    } hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-lg block py-1 px-2 nav`}
                 >
                   <div className='font-light'>
                     {link.icon}
@@ -93,7 +92,7 @@ const NavBar = () => {
 
       <div className='nav-func-btn block'>
         <ThemeSwitcher />
-        <LangSwitcher />
+        {/* <LangSwitcher /> */}
       </div>
 
       {/* Mobile Phone Menu */}
@@ -166,31 +165,28 @@ const Header = ({ navBarTitle, fullWidth }) => {
     <>
       <div className='observer-element h-4 md:h-12' ref={sentinelRef}></div>
       <div
-        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${
-          !fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
-        }`}
+        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
+          }`}
         id='sticky-nav'
         ref={navRef}
       >
         <div className='flex items-center'>
           <Link passHref href='/' scroll={false} aria-label={BLOG.title}>
             <motion.div>
-              <Logo className='h-6 hover:text-blue-500 dark:hover:text-blue-500 fill-current' />
+              <Logo className='h-6 hover:text-blue-500 dark:hover:text-blue-500 fill-current transition-all duration-400' />
             </motion.div>
           </Link>
           {navBarTitle ? (
             <p
-              className={`ml-2 font-medium ${
-                !showTitle ? 'hidden' : 'hidden xl:block'
-              }`}
+              className={`ml-2 font-medium ${!showTitle ? 'hidden' : 'hidden xl:block'
+                }`}
             >
               {navBarTitle}
             </p>
           ) : (
             <p
-              className={`ml-2 font-medium ${
-                !showTitle ? 'hidden' : 'hidden xl:block'
-              }`}
+              className={`ml-2 font-medium ${!showTitle ? 'hidden' : 'hidden xl:block'
+                }`}
             >
               {BLOG.title},{' '}
               <span className='font-normal'>{BLOG.description}</span>
