@@ -31,27 +31,34 @@ const NavBar = () => {
   }
 
   const links = [
-    {
-      id: 0,
-      name: t.NAV.INDEX,
-      to: BLOG.path || '/',
-      icon: <HomeIcon className='inline-block mb-1 h-5 w-5' />,
-      show: true
-    },
+    // {
+    //   id: 0,
+    //   name: t.NAV.INDEX,
+    //   to: BLOG.path || '/',
+    //   icon: <HomeIcon className='inline-block mb-1 h-5 w-5' />,
+    //   show: true
+    // },
     {
       id: 1,
-      name: t.NAV.NEWSLETTER,
-      to: '/newsletter',
+      name: t.NAV.STORIES,
+      to: '/stories',
       icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
       show: BLOG.pagesShow.newsletter
     },
-    {
-      id: 2,
-      name: t.NAV.NOTES,
-      to: '/notes',
-      icon: <CollectionIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.notes
-    },
+    // {
+    //   id: 1,
+    //   name: t.NAV.NEWSLETTER,
+    //   to: '/stories',
+    //   icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
+    //   show: BLOG.pagesShow.newsletter
+    // },
+    // {
+    //   id: 2,
+    //   name: t.NAV.NOTES,
+    //   to: '/notes',
+    //   icon: <CollectionIcon className='inline-block mb-1 h-5 w-5' />,
+    //   show: BLOG.pagesShow.notes
+    // },
     {
       id: 3,
       name: t.NAV.PROJECTS,
@@ -76,8 +83,8 @@ const NavBar = () => {
             link.show && (
               <Link passHref href={link.to} key={link.id} scroll={false}>
                 <li
-                  className={`${activeMenu === link.to ? 'transition-all duration-300 bg-gray-200 dark:bg-gray-900' : ''
-                    } hover:bg-gray-200 dark:hover:bg-gray-900 cursor-pointer rounded-lg block py-1 px-2 nav`}
+                  className={`${activeMenu === link.to ? 'transition-all duration-300 bg-gray-200 d__hover' : ''
+                    } hover:bg-gray-200 transition-all duration-300 dark:hover:bg-gray-900 cursor-pointer rounded-lg block py-1 px-2 nav`}
                 >
                   <div className='font-light'>
                     {link.icon}
@@ -100,12 +107,12 @@ const NavBar = () => {
         <button
           type='button' aria-label='Menu'
           onClick={() => setShowMenu((showMenu) => !showMenu)}
-          className='hover:bg-gray-200 dark:hover:bg-gray-900 cursor-pointer rounded-lg block p-2 -mr-3 md:pb-3'
+          className='hover:bg-gray-200 d__hover cursor-pointer rounded-lg block p-2 -mr-3 md:pb-3'
         >
           <MenuIcon className='inline-block mb-1 h-5 w-5' />
         </button>
         {showMenu && (
-          <div className='absolute right-0 w-40 mr-4 mt-2 bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-600 rounded-md shadow-lg outline-none'>
+          <div className='absolute right-0 w-40 mr-4 mt-2 bg-white dark:bg-slate-800 divide-y divide-gray-200 dark:divide-gray-600 rounded-md shadow-lg outline-none'>
             <div className='py-1'>
               {links.map(
                 (link) =>
@@ -113,7 +120,7 @@ const NavBar = () => {
                     <Link passHref key={link.id} href={link.to} scroll={false}>
                       <button
                         onClick={() => setShowMenu((showMenu) => !showMenu)}
-                        className='text-left hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:bg-opacity-40 font-light block justify-between w-full px-4 py-2 leading-5'
+                        className='text-left hover:bg-gray-100 dark:hover:bg-slate-700 transition-all duration-300 dark:hover:bg-opacity-40 font-light block justify-between w-full px-4 py-2 leading-5'
                       >
                         {link.icon}
                         <span className='m-1'>{link.name}</span>

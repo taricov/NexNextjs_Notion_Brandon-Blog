@@ -40,7 +40,11 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      backgroundColor: {
+        bradark: "rgba(255,255,255,.01)"
+      }
+    }
   },
   plugins: []
 }

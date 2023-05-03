@@ -3,6 +3,21 @@
 @tailwind utilities;
 @import './prism.css';
 
+.d__hover{
+  @apply dark:bg-slate-900 dark:bg-opacity-30 transition-all duration-300
+}
+.d__hover:hover{
+  @apply dark:bg-slate-900 dark:bg-opacity-10
+}
+.d__inputs{
+  @apply dark:bg-slate-900 dark:bg-opacity-20 transition-all duration-500
+}
+.d__inputs:focus{
+  @apply dark:bg-slate-900 dark:bg-opacity-60
+}
+/* .darktheme:hover{
+  @apply dark:bg-slate-900 dark:bg-opacity-50
+} */
 html {
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
